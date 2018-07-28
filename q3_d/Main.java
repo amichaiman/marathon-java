@@ -1,4 +1,4 @@
-package q3_b;
+package q3_d;
 
 public class Main {
     public static void main(String[] args) {

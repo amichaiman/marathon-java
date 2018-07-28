@@ -10,12 +10,19 @@ public class FixedList<E> {
 
     public FixedList() {
         size = DEFAULT_SIZE;
-        list = new ArrayList<>(DEFAULT_SIZE);
+        init();
     }
 
     public FixedList(int size) {
         this.size = size;
-        list = new ArrayList<>(size);
+        init();
+    }
+
+    private void init() {
+        list = new ArrayList<>(DEFAULT_SIZE);
+        for (int i=0; i<size; i++){
+            list.add(0,null);
+        }
     }
 
     public E get(int x){
