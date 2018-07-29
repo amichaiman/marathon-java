@@ -1,4 +1,4 @@
-package q3_b;
+package final2010_q3_e;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ public class FixedList<E> {
     private List<E> list;
     private E empty = null;
     private int size;
+
     public static final int DEFAULT_SIZE = 1000;
 
     public FixedList() {
@@ -43,8 +44,22 @@ public class FixedList<E> {
         }
         list.add(ix,elem);
     }
-
+    public E remove(int ix) throws ListException {
+        if (ix < 0 || ix >= size){
+            throw new ListException("invalid array index");
+        }
+        E e = list.get(ix);
+        if (e == empty){
+            throw new ListException("no value at index " + ix);
+        }
+        list.set(ix, empty);
+        return e;
+    }
     public int length(){
         return size;
+    }
+
+    public FixedListIterator getIterator(){
+        return new FixedListIterator(this);
     }
 }

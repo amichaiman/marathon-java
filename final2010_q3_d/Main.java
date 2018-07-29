@@ -1,4 +1,4 @@
-package q3_d;
+package final2010_q3_d;
 
 public class Main {
     public static void main(String[] args) {

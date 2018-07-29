@@ -1,4 +1,4 @@
-package q1;
+package final2010_q1;
 
 public class Child extends Parent {
     private int i;
@@ -11,6 +11,6 @@ public class Child extends Parent {
     }
 
     public String toString(){
-        return (super.toString() + "\nq1.Child's i is: " + i);
+        return (super.toString() + "\nfinal2010_q1.Child's i is: " + i);
     }
 }

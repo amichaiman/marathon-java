@@ -1,4 +1,4 @@
-package q1;
+package final2010_q1;
 
 public class Parent {
     private int i;
@@ -11,6 +11,6 @@ public class Parent {
     }
 
     public String toString(){
-        return ("q1.Parent's i is: " + i);
+        return ("final2010_q1.Parent's i is: " + i);
     }
 }

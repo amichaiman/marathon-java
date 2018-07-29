@@ -1,4 +1,4 @@
-package q3_e;
+package final2010_q3_c;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ public class FixedList<E> {
     private List<E> list;
     private E empty = null;
     private int size;
-
     public static final int DEFAULT_SIZE = 1000;
 
     public FixedList() {
@@ -57,9 +56,5 @@ public class FixedList<E> {
     }
     public int length(){
         return size;
-    }
-
-    public FixedListIterator getIterator(){
-        return new FixedListIterator(this);
     }
 }
