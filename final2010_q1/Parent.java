@@ -3,7 +3,7 @@ package final2010_q1;
 public class Parent {
     private int i;
 
-    public void incr(int d){
+    protected void incr(int d) throws Exception{
         if (d > 0){
             this.i += d;
             this.incr(d-1);

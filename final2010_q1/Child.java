@@ -1,12 +1,18 @@
 package final2010_q1;
 
+import java.io.IOException;
+
 public class Child extends Parent {
     private int i;
 
-    public void incr(int d){
+    protected void incr(int d) throws IOException {
         if (d > 0){
             this.i += d;
-            super.incr (d/2);
+            try {
+                super.incr (d/2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

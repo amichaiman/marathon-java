@@ -5,7 +5,11 @@ public class Main {
 
         Parent a = new Child();
 
-        a.incr(10);
+        try {
+            a.incr(10);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         System.out.println(a);
     }
