@@ -21,7 +21,7 @@ public class Main {
 
         A.printAll(alist);
        // b.printAll(blist);    //cannot call static method on an instance + blist is not a list<A>
-
+        A.printAll(blist);
         a.printObject(b);
 //        b.printObject((B) a); //cannot downcast a to B object
         b.printObject((A) b);

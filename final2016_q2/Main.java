@@ -11,7 +11,7 @@ public class Main {
         s.push("6");
         s.push("7");
 
-        func(x, y, z, s);   //x and z CANNOT change
+        func(x, y, z, s);   //main's x and z CANNOT change
 
         z = z.replaceAll("5", "6");
         z.replaceAll("6", "8");         //has no effect on z

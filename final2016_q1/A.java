@@ -9,9 +9,10 @@ public class A {
 
     public void printObject(A a){
         System.out.println("Obj a");
+        a.print();
     }
 
-    public static void printAll(List<A> list){
+    public static void printAll(List<? extends A> list){
         System.out.println("begin list:");
         for (A a:list){
             a.print();
