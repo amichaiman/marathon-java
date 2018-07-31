@@ -10,19 +10,26 @@ public class Calculator implements ActionListener {
     private JPanel jp;
     private JButton add;
     private JButton clear;
+    private JButton exit;
     private JTextField first;
     private JTextField second;
     private JTextField result;
 
     public Calculator() {
-        SwingUtilities.invokeLater(
-                () -> initWindow());
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                initWindow();
+            }
+        });
     }
     private void initWindow() {
         JPanel pb = new JPanel();
         pb.setLayout(new BoxLayout
                 (pb, BoxLayout.X_AXIS));
+
         add = new JButton("Add");
+        add.addActionListener(this);    //added
         pb.add(add);
         clear = new JButton("Clear");
         clear.addActionListener(this);
@@ -49,6 +56,7 @@ public class Calculator implements ActionListener {
         lr.setSize(50,10);
         jp.add(lr);
         result = new JTextField(20);
+        result.setEditable(false);
         jp.add(result);
         jp.add(pb);
 
@@ -62,8 +70,6 @@ public class Calculator implements ActionListener {
         jf.pack();
         jf.setVisible(true);
 
-        add.addActionListener(this);
-        clear.addActionListener(this);
     }
 
     @Override
@@ -73,9 +79,12 @@ public class Calculator implements ActionListener {
             double d2 = Double.parseDouble(second.getText());
             double r = d1 + d2;
             result.setText(Double.toString(r));
-        } else if (actionEvent.getSource() == clear){
+        } else if (actionEvent.getSource() == exit){
+            System.exit(1);
+        } else if (actionEvent.getSource() == clear){   //added
             first.setText("");
             second.setText("");
+            result.setText("");
         }
     }
 }
